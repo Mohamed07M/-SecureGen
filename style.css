@@ -1,0 +1,225 @@
+:root{
+    --primary:#6C63FF;
+    --secondary:#00C9A7;
+    --bg1:#1e1e2f;
+    --bg2:#12121c;
+    --glass:rgba(255,255,255,0.08);
+    --text:#ffffff;
+    --card-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:'Cairo',sans-serif;
+    background:linear-gradient(135deg,var(--bg1),var(--bg2));
+    color:var(--text);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    min-height:100vh;
+    transition:0.4s ease;
+}
+
+body.light{
+    --bg1:#f5f7fa;
+    --bg2:#e4e7ec;
+    --text:#111;
+    --glass:rgba(255,255,255,0.6);
+}
+
+.nav{
+    width:100%;
+    text-align:center;
+    padding:15px;
+}
+
+.nav a{
+    color:var(--text);
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.nav a:hover{
+    color:var(--secondary);
+}
+
+.container{
+    width:95%;
+    max-width:500px;
+    background:var(--glass);
+    backdrop-filter:blur(20px);
+    border-radius:20px;
+    padding:30px;
+    box-shadow:var(--card-shadow);
+    margin-top:50px;
+    animation:fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(20px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+.logo{
+    font-size:22px;
+    font-weight:800;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.controls-top button{
+    background:none;
+    border:none;
+    color:var(--text);
+    font-weight:bold;
+    cursor:pointer;
+    margin-left:10px;
+    font-size:14px;
+}
+
+.password-box{
+    display:flex;
+    gap:10px;
+    margin:20px 0;
+}
+
+.password-box input{
+    flex:1;
+    padding:12px;
+    border-radius:10px;
+    border:none;
+    font-size:15px;
+    outline:none;
+}
+
+.password-box button{
+    background:var(--primary);
+    border:none;
+    padding:10px 15px;
+    border-radius:10px;
+    color:#fff;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.password-box button:hover{
+    transform:scale(1.05);
+}
+
+.strength{
+    height:8px;
+    border-radius:10px;
+    background:#333;
+    overflow:hidden;
+    margin-bottom:15px;
+}
+
+.strength div{
+    height:100%;
+    width:0%;
+    transition:0.4s ease;
+}
+
+.options{
+    margin:15px 0;
+}
+
+.options label{
+    display:flex;
+    justify-content:space-between;
+    margin:8px 0;
+    font-size:14px;
+}
+
+input[type=range]{
+    width:100%;
+    margin:10px 0;
+}
+
+.generate{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(45deg,var(--primary),var(--secondary));
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:10px;
+    transition:0.3s;
+}
+
+.generate:hover{
+    transform:scale(1.03);
+    box-shadow:0 5px 20px rgba(0,0,0,0.4);
+}
+
+footer{
+    text-align:center;
+    margin-top:20px;
+    font-size:12px;
+    opacity:0.7;
+}
+
+.toast{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--secondary);
+    padding:10px 20px;
+    border-radius:20px;
+    opacity:0;
+    transition:0.4s;
+    color:#fff;
+    font-weight:bold;
+}
+
+.toast.show{
+    opacity:1;
+}
+
+p {
+    text-align: right;
+}
+
+h1 {
+    text-align: right;
+}
+
+h1 {
+    height: 60px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+
+/* استهداف النصوص فقط */
+.option-text {
+    display: inline-block;
+    transition: transform 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+}
+
+/* عند المرور بالماوس */
+label:hover .option-text {
+    transform: scale(1.05);   /* تكبير خفيف */
+    color: #f39c12;           /* لون مميز عند المرور */
+}
+
+/* عند الضغط على النص */
+label:active .option-text {
+    transform: scale(0.97);   /* ضغط خفيف */
+}

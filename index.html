@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SecureGen | مولد كلمات مرور قوية</title>
+<meta name="description" content="مولد كلمات مرور قوي وآمن يدعم العربية والإنجليزية.">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+<a href="index.html">الرئيسية</a>
+<a href="about.html">عن الموقع</a>
+<a href="privacy.html">الخصوصية</a>
+</nav>
+
+<div class="container">
+<header>
+<div class="logo">🔐 SecureGen</div>
+<div class="controls-top">
+<button onclick="toggleLang()">AR/EN</button>
+<button onclick="toggleTheme()">🌙</button>
+</div>
+</header>
+
+<h1>مولد كلمات مرور قوية وآمنة</h1>
+
+<div class="password-box">
+<input type="text" id="password" readonly>
+<button onclick="copyPassword()">📋</button>
+</div>
+
+<div class="strength"><div id="strengthBar"></div></div>
+
+<div class="options">
+<label>الطول: <span id="lengthValue">16</span></label>
+<input type="range" min="6" max="32" value="16" id="length">
+<div>
+<label>
+  <span class="option-text">حروف كبيرة</span>
+  <input type="checkbox" id="upper" checked>
+</label>
+
+<label>
+  <span class="option-text">حروف صغيرة</span>
+  <input type="checkbox" id="lower" checked>
+</label>
+
+<label>
+  <span class="option-text">أرقام</span>
+  <input type="checkbox" id="numbers" checked>
+</label>
+
+<label>
+  <span class="option-text">رموز</span>
+  <input type="checkbox" id="symbols" checked>
+</label>
+
+<label>
+  <span class="option-text">استبعاد المتشابه</span>
+  <input type="checkbox" id="exclude">
+</label>
+
+</div>
+
+<button class="generate" onclick="generatePassword()">توليد كلمة مرور</button>
+
+<footer>
+© 2026 SecureGen - جميع الحقوق محفوظة
+</footer>
+</div>
+
+<div class="toast" id="toast">تم النسخ ✔</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
